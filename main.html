@@ -7,8 +7,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Amiri & Cairo -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@400;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Tailwind Config for Custom Fonts and Colors -->
     <script>
@@ -23,7 +22,7 @@
                         champagneDark: '#C5A86A'
                     },
                     fontFamily: {
-                        amiri: ['Amiri', 'serif'],
+                        
                         cairo: ['Cairo', 'sans-serif'],
                         kufi: ['Reem Kufi', 'sans-serif']
                     }
@@ -33,7 +32,7 @@
     </script>
     <style>
         body {
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Changa', sans-serif;
             background-color: #0B2920;
             color: #F4E8C1;
             overflow-x: hidden;
@@ -61,7 +60,120 @@
             background: #D4AF37;
             border-radius: 4px;
         }
+        
+
     </style>
+    <style>
+    /* تأثيرات الظهور التدريجي الفخمة */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .animate-box {
+        animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-fade {
+        animation: fadeIn 1.2s ease-in-out forwards;
+    }
+
+    /* تحسين إضافي لتصميم الحقول والقوائم المنسدلة لتكون فخمة */
+    input, select, textarea {
+        background-color: rgba(11, 41, 29, 0.7) !important;
+        border: 1px solid rgba(212, 175, 55, 0.4) !important;
+        color: #FCF6BA !important;
+        transition: all 0.3s ease !important;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        border-color: #D4AF37 !important;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.25) !important;
+        outline: none !important;
+    }
+
+    /* تخصيص القائمة المنسدلة (Select) لتكون متناسقة */
+    select option {
+        background-color: #0b291d;
+        color: #FCF6BA;
+        padding: 10px;
+    }
+
+    /* تأثير راقي للزر عند المرور عليه */
+    .luxury-btn {
+        background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7);
+        background-size: 300% 300%;
+        transition: all 0.5s ease;
+        animation: goldShine 6s ease infinite;
+    }
+
+    .luxury-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(191, 149, 63, 0.4);
+    }
+
+    @keyframes goldShine {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+</style>
+<style>
+    /* 1. أنيميشن راقي للعناوين والنصوص عند مرور الماوس */
+    .hover-text-effect {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        display: inline-block;
+    }
+    .hover-text-effect:hover {
+        transform: scale(1.05);
+        color: #FFFFFF !important;
+        text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    }
+
+    /* 2. أنيميشن فخم للزر عند مرور الماوس */
+    .hover-btn-effect {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .hover-btn-effect::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg, 
+            transparent, 
+            rgba(255, 255, 255, 0.3), 
+            transparent
+        );
+        transition: 0.6s;
+    }
+
+    .hover-btn-effect:hover::after {
+        left: 100%;
+    }
+
+    .hover-btn-effect:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        border-color: #FCF6BA !important;
+    }
+</style>
 </head>
 <body class="bg-emeraldDark text-champagne selection:bg-emeraldGold selection:text-emeraldDark">
 
@@ -169,8 +281,8 @@
 
 </section>
 
-    Love Story Timeline
-      <!-- <section class="py-20 px-4 relative z-10">
+   <!-- Love Story Timeline
+       <section class="py-20 px-4 relative z-10">
         <div class="max-w-3xl mx-auto text-center mb-16 space-y-4">
             <span class="font-kufi text-emeraldGold text-sm tracking-widest uppercase">قصة لقائنا</span>
             <h2 class="font-amiri text-4xl md:text-5xl gold-gradient-text font-bold">محطات في رحلتنا</h2>
@@ -511,6 +623,34 @@
             });
         }
     });
+</script>
+<script>
+    const card = document.querySelector('.invitation-card'); // ضع هنا الـ Class الخاص بالبرواز الكبير لديك
+
+    if (card) {
+        document.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            // حساب زاوية الميلان بناءً على حركة الماوس (قيم صغيرة لتكون ناعمة وغير مزعجة)
+            const rotateX = (-y / 25).toFixed(2);
+            const rotateY = (x / 25).toFixed(2);
+
+            // تطبيق الحركة الثلاثية الأبعاد على البرواز
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+        });
+
+        // إعادة البرواز لوضعه الطبيعي فور خروج الماوس من الشاشة
+        document.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            card.style.transition = 'transform 0.5s ease-in-out';
+        });
+        
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'none'; // إلغاء التأخير أثناء الحركة للحصول على استجابة فورية
+        });
+    }
 </script>
 </body>
 </html>
